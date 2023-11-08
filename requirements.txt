@@ -13,3 +13,4 @@ python-dotenv
 replicate
 docx2txt
 text_generation
+openai
