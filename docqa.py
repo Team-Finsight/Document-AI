@@ -20,8 +20,8 @@ from langchain.chat_models import ChatAnyscale
 import os
 from pydantic import SecretStr
 # Setting environment variables using Python
-api_key=SecretStr(os.environ["ANYSCALE_API_KEY"])
-api_base=SecretStr(os.environ["ANYSCALE_API_BASE"])
+api_key="esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
+api_base="https://api.endpoints.anyscale.com/v1"
 
 # Verifying that the environment variables are set
 def initialize_session_state():
@@ -67,7 +67,7 @@ def create_conversational_chain(vector_store):
                         #callbacks=[StreamingStdOutCallbackHandler()],
                         #model_type="llama", config={'max_new_tokens': 500, 'temperature': 0.01})
     #ANYSCALE_ENDPOINT_TOKEN = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
-    llm = ChatAnyscale(anyscale_api_key=api_key.get_secret_value(),model_name="meta-llama/Llama-2-13b-chat-hf")
+    llm = ChatAnyscale(anyscale_api_key=api_key,model_name="meta-llama/Llama-2-13b-chat-hf")
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
     chain = ConversationalRetrievalChain.from_llm(llm=llm, chain_type='stuff',
