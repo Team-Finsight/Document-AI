@@ -1,5 +1,5 @@
 pydantic==2.4.2
-langchain==0.0.327
+langchain==0.0.316
 torch
 accelerate
 sentence_transformers
@@ -14,4 +14,4 @@ python-dotenv
 replicate
 docx2txt
 text_generation
-openai
+openai==0.28.1
