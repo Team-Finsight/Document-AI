@@ -1,5 +1,5 @@
 pydantic==2.4.2
-langchain
+langchain==0.0.327
 torch
 accelerate
 sentence_transformers
