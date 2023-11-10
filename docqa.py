@@ -17,9 +17,15 @@ import tempfile
 from langchain.chat_models import ChatAnyscale
 
 
-load_dotenv()
+import os
 
+# Setting environment variables using Python
+os.environ["ANYSCALE_API_KEY"] = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
+os.environ["ANYSCALE_API_BASE"] = "https://api.endpoints.anyscale.com/v1"
 
+# Verifying that the environment variables are set
+api_key = os.getenv("ANYSCALE_API_KEY")
+api_base = os.getenv("ANYSCALE_API_BASE")
 def initialize_session_state():
     if 'history' not in st.session_state:
         st.session_state['history'] = []
@@ -58,8 +64,6 @@ def display_chat_history(chain):
                 message(st.session_state["generated"][i], key=str(i), avatar_style="fun-emoji")
 
 def create_conversational_chain(vector_store):
-    load_dotenv()
-    # Create llm
     #llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin",
                         #streaming=True, 
                         #callbacks=[StreamingStdOutCallbackHandler()],
@@ -74,8 +78,6 @@ def create_conversational_chain(vector_store):
     return chain
 
 def main():
-    load_dotenv()
-    # Initialize session state
     initialize_session_state()
     st.title("FIN-DOC CHAT🫡")
     # Initialize Streamlit
