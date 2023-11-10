@@ -64,9 +64,8 @@ def create_conversational_chain(vector_store):
                         #streaming=True, 
                         #callbacks=[StreamingStdOutCallbackHandler()],
                         #model_type="llama", config={'max_new_tokens': 500, 'temperature': 0.01})
-    ANYSCALE_ENDPOINT_TOKEN = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
-    llm = ChatAnyscale(anyscale_api_key=ANYSCALE_ENDPOINT_TOKEN,
-                  temperature=0.7, model_name="meta-llama/Llama-2-13b-chat-hf", streaming=True)
+    #ANYSCALE_ENDPOINT_TOKEN = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
+    llm = ChatAnyscale(model_name="meta-llama/Llama-2-13b-chat-hf")
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
     chain = ConversationalRetrievalChain.from_llm(llm=llm, chain_type='stuff',
