@@ -17,9 +17,20 @@ from PIL import Image
 import fitz  # PyMuPDF
 import io
 from PIL import Image
+import shutil
 api_key = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
 api_base = "https://api.endpoints.anyscale.com/v1"
+pytesseract.pytesseract.tesseract_cmd = None
 
+# search for tesseract binary in path
+@st.cache_resource
+def find_tesseract_binary() -> str:
+    return shutil.which("tesseract")
+
+# set tesseract binary path
+pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
+if not pytesseract.pytesseract.tesseract_cmd:
+    st.error("Tesseract binary not found in PATH. Please install Tesseract.")
 class SimpleDocument:
     def __init__(self, text, metadata=None):
         self.page_content = text
