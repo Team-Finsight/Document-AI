@@ -18,4 +18,4 @@ openai==0.28.1
 PyMuPDF
 Pillow
 pytesseract
-shutil
+pytest-shutil
