@@ -18,7 +18,7 @@ import fitz  # PyMuPDF
 import io
 from PIL import Image
 pytesseract.pytesseract.tesseract_cmd = None
-
+import shutil
 # search for tesseract binary in path
 @st.cache_resource
 def find_tesseract_binary() -> str:
