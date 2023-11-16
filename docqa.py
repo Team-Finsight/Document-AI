@@ -17,17 +17,6 @@ from PIL import Image
 import fitz  # PyMuPDF
 import io
 from PIL import Image
-pytesseract.pytesseract.tesseract_cmd = None
-import shutil
-# search for tesseract binary in path
-@st.cache_resource
-def find_tesseract_binary() -> str:
-    return shutil.which("tesseract")
-
-# set tesseract binary path
-pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
-if not pytesseract.pytesseract.tesseract_cmd:
-    st.error("Tesseract binary not found in PATH. Please install Tesseract.")
 api_key = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
 api_base = "https://api.endpoints.anyscale.com/v1"
 
