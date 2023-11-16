@@ -19,4 +19,3 @@ PyMuPDF
 Pillow
 pytesseract
 pytest-shutil
-git+https://github.com/tesseract-ocr/tesseract.git
