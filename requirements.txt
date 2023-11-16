@@ -15,3 +15,6 @@ replicate
 docx2txt
 text_generation
 openai==0.28.1
+PyMuPDF
+Pillow
+pytesseract
