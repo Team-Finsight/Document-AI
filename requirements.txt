@@ -1,13 +1,11 @@
 pydantic==2.4.2
 langchain==0.0.316
-torch
 accelerate
 sentence_transformers
 streamlit_chat
 streamlit
 faiss-cpu
 tiktoken
-ctransformers
 huggingface-hub
 pypdf
 python-dotenv
