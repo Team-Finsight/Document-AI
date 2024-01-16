@@ -20,7 +20,7 @@ import fitz  # PyMuPDF
 import io
 from PIL import Image
 import shutil
-api_key = "esecret_fv9yhc2f1ix7lfdztdfh1fd6n8"
+api_key = "esecret_sn18dj7defst1n3aacssvnc94m"
 api_base = "https://api.endpoints.anyscale.com/v1"
 class SimpleDocument:
     def __init__(self, text, metadata=None):
